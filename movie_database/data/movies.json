@@ -1,0 +1,21 @@
+{
+    "movies": [
+        {
+            "title": "Matrix",
+            "director": 6,
+            "release_year": 1999,
+            "main_actors": [0, 1, 2],
+            "duration": 126,
+            "genre": "Action"
+        },
+        {
+            "title": "Cube",
+            "director": 7,
+            "release_year": 1997,
+            "main_actors": [3, 4, 5],
+            "duration": 90,
+            "genre": "Sci-Fi"
+        }
+    ]
+}
+

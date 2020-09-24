@@ -24,7 +24,29 @@ void print_movies(struct json_object * parsed_json) {
 
     for(i=0; i < n_movies; i++) {
 		movie = json_object_array_get_idx(movies, i);
-		printf("%s\n", json_object_to_json_string(movie));
+
+		json_object_object_get_ex(movie, "title", &title);
+        json_object_object_get_ex(movie, "director", &director);
+        json_object_object_get_ex(movie, "release_year", &release_year);
+        json_object_object_get_ex(movie, "duration", &duration);
+        json_object_object_get_ex(movie, "genre", &genre);
+        json_object_object_get_ex(movie, "main_actors", &main_actors);
+
+        n_actors = json_object_array_length(main_actors);
+        size_t j;
+
+        printf("Title: %s\n", json_object_get_string(title));
+        printf("Director: %s\n", json_object_get_string(director));
+        printf("Release year: %s\n", json_object_get_string(release_year));
+        printf("Duration: %s\n", json_object_get_string(duration));
+        printf("Genre: %s\n", json_object_get_string(genre));
+        printf("Main actors: ");
+        for(j=0; j < n_actors; j++) {
+            actor = json_object_array_get_idx(main_actors, j);
+            printf("%s / ", json_object_get_string(actor));
+        }
+        printf("\n");
+        printf("==============================\n");
 	}
 }
 
@@ -48,6 +70,16 @@ void print_people(struct json_object * parsed_json) {
 
     for(i=0; i < n_people; i++) {
 		person = json_object_array_get_idx(people, i);
-		printf("%s\n", json_object_to_json_string(person));
+
+        json_object_object_get_ex(person, "last_name", &last_name);
+        json_object_object_get_ex(person, "first_name", &first_name);
+        json_object_object_get_ex(person, "date_of_birth", &date_of_birth);
+        json_object_object_get_ex(person, "nationality", &nationality);
+
+        printf("Lastname: %s\n", json_object_get_string(last_name));
+        printf("Firstname: %s\n", json_object_get_string(first_name));
+        printf("Date of birth: %s\n", json_object_get_string(date_of_birth));
+        printf("Nationality: %s\n", json_object_get_string(nationality));
+        printf("==============================\n");
 	}
 }

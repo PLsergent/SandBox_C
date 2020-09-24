@@ -4,7 +4,7 @@
             "title": "Matrix",
             "director": 6,
             "release_year": 1999,
-            "main_actors": [0, 1, 2],
+            "main_actors": ["Keanu Reeves", "Laurence Fishburne", "Carrie-Anne Moss"],
             "duration": 126,
             "genre": "Action"
         },
@@ -12,7 +12,7 @@
             "title": "Cube",
             "director": 7,
             "release_year": 1997,
-            "main_actors": [3, 4, 5],
+            "main_actors": ["Nicole de Boer", "Nicky Guadagni", "David Hewlett"],
             "duration": 90,
             "genre": "Sci-Fi"
         }

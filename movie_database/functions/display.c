@@ -84,6 +84,6 @@ void print_people(struct json_object * parsed_json) {
         printf("Firstname: \033[1;37m %s\033[0m\n", json_object_get_string(first_name));
         printf("Date of birth: \033[1;37m %s\033[0m\n", json_object_get_string(date_of_birth));
         printf("Nationality:  \033[1;37m %s\033[0m\n", json_object_get_string(nationality));
-        printf("==============================\n");
+        printf("==================================\n");
 	}
 }

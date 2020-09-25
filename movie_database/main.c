@@ -1,3 +1,6 @@
+// Pierre-Louis SERGENT et Younes BOUCHAKOUR
+// TP Cinema BDD
+
 #include <stdio.h>
 #include "./headers/headers.h"
 

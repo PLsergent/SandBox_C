@@ -2,10 +2,45 @@
     "people": [
         {
             "id": 0,
-            "last_name": "Pitt",
-            "first_name": "Brad",
-            "date_of_birth": "27/03/1986",
+            "last_name": "Reeves",
+            "first_name": "Keanu",
+            "date_of_birth": "02/09/1964",
+            "nationality": "Canadian"
+        },
+        {
+            "id": 1,
+            "last_name": "Fishburne",
+            "first_name": "Laurence",
+            "date_of_birth": "30/07/1961",
             "nationality": "American"
+        },
+        {
+            "id": 2,
+            "last_name": "Moss",
+            "first_name": "Carrie-Anne",
+            "date_of_birth": "21/08/1967",
+            "nationality": "Canadian"
+        },
+        {
+            "id": 3,
+            "last_name": "de Boer",
+            "first_name": "Nicole",
+            "date_of_birth": "20/12/1970",
+            "nationality": "Canadian"
+        },
+        {
+            "id": 4,
+            "last_name": "Guadagni",
+            "first_name": "Nicky",
+            "date_of_birth": "01/08/1952",
+            "nationality": "Canadian"
+        },
+        {
+            "id": 5,
+            "last_name": "Hewlett",
+            "first_name": "David",
+            "date_of_birth": "18/04/1968",
+            "nationality": "British"
         }
     ]
 }

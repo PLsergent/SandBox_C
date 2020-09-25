@@ -2,7 +2,7 @@
     "movies": [
         {
             "title": "Matrix",
-            "director": 6,
+            "director": "The Wachowskis",
             "release_year": 1999,
             "main_actors": ["Keanu Reeves", "Laurence Fishburne", "Carrie-Anne Moss"],
             "duration": 126,
@@ -10,7 +10,7 @@
         },
         {
             "title": "Cube",
-            "director": 7,
+            "director": "Vincenzo Natali",
             "release_year": 1997,
             "main_actors": ["Nicole de Boer", "Nicky Guadagni", "David Hewlett"],
             "duration": 90,

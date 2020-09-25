@@ -6,41 +6,6 @@
             "first_name": "Brad",
             "date_of_birth": "27/03/1986",
             "nationality": "American"
-        },
-        {
-            "id": 1,
-            "last_name": "Pitt",
-            "first_name": "Brad",
-            "date_of_birth": "27/03/1986",
-            "nationality": "American"
-        },
-        {
-            "id": 2,
-            "last_name": "Pitt",
-            "first_name": "Brad",
-            "date_of_birth": "27/03/1986",
-            "nationality": "American"
-        },
-        {
-            "id": 3,
-            "last_name": "Pitt",
-            "first_name": "Brad",
-            "date_of_birth": "27/03/1986",
-            "nationality": "American"
-        },
-        {
-            "id": 4,
-            "last_name": "Pitt",
-            "first_name": "Brad",
-            "date_of_birth": "27/03/1986",
-            "nationality": "American"
-        },
-        {
-            "id": 5,
-            "last_name": "Pitt",
-            "first_name": "Brad",
-            "date_of_birth": "27/03/1986",
-            "nationality": "American"
         }
     ]
 }

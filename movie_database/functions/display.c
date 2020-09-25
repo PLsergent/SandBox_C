@@ -20,7 +20,7 @@ void print_movies(struct json_object * parsed_json) {
 
     n_movies = json_object_array_length(movies);
 
-    printf("Found %lu movies\n", n_movies);
+    printf("Found %lu movies\n\n", n_movies);
 
     for(i=0; i < n_movies; i++) {
 		movie = json_object_array_get_idx(movies, i);
@@ -35,18 +35,22 @@ void print_movies(struct json_object * parsed_json) {
         n_actors = json_object_array_length(main_actors);
         size_t j;
 
-        printf("Title: %s\n", json_object_get_string(title));
-        printf("Director: %s\n", json_object_get_string(director));
-        printf("Release year: %s\n", json_object_get_string(release_year));
-        printf("Duration: %s\n", json_object_get_string(duration));
-        printf("Genre: %s\n", json_object_get_string(genre));
+        printf("Title: \033[1;37m %s\033[0m\n", json_object_get_string(title));
+        printf("Director: \033[1;37m %s\033[0m\n", json_object_get_string(director));
+        printf("Release year: \033[1;37m %s\033[0m\n", json_object_get_string(release_year));
+        printf("Duration: \033[1;37m %s\033[0m\n", json_object_get_string(duration));
+        printf("Genre: \033[1;37m %s\033[0m\n", json_object_get_string(genre));
         printf("Main actors: ");
         for(j=0; j < n_actors; j++) {
             actor = json_object_array_get_idx(main_actors, j);
-            printf("%s / ", json_object_get_string(actor));
+            if (j == n_actors - 1) {
+                printf("\033[1;37m %s\033[0m", json_object_get_string(actor));
+            } else {
+                printf("\033[1;37m%s\033[0m / ", json_object_get_string(actor));
+            }
         }
         printf("\n");
-        printf("==============================\n");
+        printf("==================================\n");
 	}
 }
 
@@ -66,7 +70,7 @@ void print_people(struct json_object * parsed_json) {
 
     n_people = json_object_array_length(people);
 
-    printf("Found %lu people\n", n_people);
+    printf("Found %lu people\n\n", n_people);
 
     for(i=0; i < n_people; i++) {
 		person = json_object_array_get_idx(people, i);
@@ -76,10 +80,10 @@ void print_people(struct json_object * parsed_json) {
         json_object_object_get_ex(person, "date_of_birth", &date_of_birth);
         json_object_object_get_ex(person, "nationality", &nationality);
 
-        printf("Lastname: %s\n", json_object_get_string(last_name));
-        printf("Firstname: %s\n", json_object_get_string(first_name));
-        printf("Date of birth: %s\n", json_object_get_string(date_of_birth));
-        printf("Nationality: %s\n", json_object_get_string(nationality));
+        printf("Lastname: \033[1;37m %s\033[0m\n", json_object_get_string(last_name));
+        printf("Firstname: \033[1;37m %s\033[0m\n", json_object_get_string(first_name));
+        printf("Date of birth: \033[1;37m %s\033[0m\n", json_object_get_string(date_of_birth));
+        printf("Nationality:  \033[1;37m %s\033[0m\n", json_object_get_string(nationality));
         printf("==============================\n");
 	}
 }

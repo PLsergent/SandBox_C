@@ -11,6 +11,5 @@
     void print_movies(struct json_object * parsed_json);
     void print_people(struct json_object * parsed_json);
 
-    void print_directors();
-    void search(char * title);
+    void search_by_title(struct json_object * parsed_json, char * search_text);
 #endif

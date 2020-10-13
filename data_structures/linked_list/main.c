@@ -8,6 +8,7 @@ int main() {
 
     head = add_start(head, 5);
     head = add_start(head, 6);
+    head = remove_first(head);
 
     print_list(head);
 

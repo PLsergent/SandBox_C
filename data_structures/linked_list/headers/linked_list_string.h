@@ -12,7 +12,7 @@
     node_str* add_start_str(node_str *head, char* text);
     node_str* add_end_str(node_str *head, char* text);
     node_str* search_str(node_str *head, char* text);
-    node_str* remove_first_str(node_str **head);
+    node_str* remove_first_str(node_str *head);
     node_str* remove_last_str(node_str *head);
     node_str* remove_text(node_str *head, char* text);
     void print_list_str(node_str *head);

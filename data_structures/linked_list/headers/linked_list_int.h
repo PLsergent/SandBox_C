@@ -8,12 +8,12 @@
         struct node_int* next;
     } node_int;
 
-    node_int* add_start(node_int *head, int val);
-    node_int* add_end(node_int *head, int val);
-    node_int* search(node_int *head, int val);
-    node_int* remove_first(node_int **head);
-    node_int* remove_last(node_int *head);
-    node_int* remove_val(node_int *head, int val);
+    node_int* add_start(node_int *head, int val); // return new head
+    node_int* add_end(node_int *head, int val); // return inserted node
+    node_int* search_value(node_int *head, int val); // return 0 if found
+    node_int* remove_first(node_int *head); // return new head
+    node_int* remove_last(node_int *head); // return new last node
+    void remove_val(node_int *head, int val);
     void print_list(node_int *head);
 
 #endif

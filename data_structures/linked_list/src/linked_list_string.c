@@ -1,5 +1,6 @@
 #include "../headers/linked_list_string.h"
 
+
 void print_list_str(node_str* head) {
     node_str* current = head;
 
@@ -34,18 +35,18 @@ node_str* add_start_str(node_str * head, char* text) {
     return new_node;
 }
 
-node_str* remove_first_str(node_str ** head) {
+node_str* remove_first_str(node_str * head) {
     node_str * next_node = NULL;
 
-    if (*head == NULL) {
+    if (head == NULL) {
         return NULL;
     }
 
-    next_node = (*head)->next;
-    free(*head);
-    *head = next_node;
+    next_node = head->next;
+    free(head);
+    head = next_node;
 
-    return *head;
+    return head;
 }
 
 node_str* remove_last_str(node_str * head) {

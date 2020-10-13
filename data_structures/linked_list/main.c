@@ -1,6 +1,7 @@
 #include "./headers/linked_list_int.h"
 #include "./headers/linked_list_string.h"
 
+
 int main() {
     // Int linkedlist
     node_int* head = NULL;

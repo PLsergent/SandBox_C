@@ -16,18 +16,18 @@ int main() {
 
     int val;
     pop_stack(&p, &val);
-    printf("popped value = %d\n", val);
+    printf("\npopped value = %d\n", val);
     display_stack(&p);
     
     pop_stack(&p, &val);
-    printf("popped value = %d\n", val);
+    printf("\npopped value = %d\n", val);
     display_stack(&p);
 
     pop_stack(&p, &val);
-    printf("popped value = %d\n", val);
+    printf("\npopped value = %d\n", val);
     display_stack(&p);
 
     pop_stack(&p, &val); // fails
-    printf("popped value = %d\n", val); // prints out the old value
+    printf("\npopped value = %d\n", val); // prints out the old value
     display_stack(&p);
 }

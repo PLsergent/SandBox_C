@@ -4,7 +4,6 @@
 
 
 void init_stack(stack_t* stack) {
-    (struct stack_t*)malloc(sizeof(stack_t)); 
     stack->top = -1; 
 }
 
@@ -35,10 +34,9 @@ int pop_stack(stack_t *stack, int *val) {
     if(isEmpty(stack)) {
         return -1;
     }
-    stack->top --;
     *val = stack->tab[stack->top];
+    stack->top --;
     return stack->tab[stack->top]; 
-
 }
 
 int top_stack(stack_t *stack, int *val) {
@@ -49,8 +47,9 @@ int top_stack(stack_t *stack, int *val) {
 }
 
 void display_stack(stack_t *stack) {
-    for (int i=0; i <= stack->top; i++) {
-        printf("%d\n", stack->tab[i]);
+    printf("Stack: ");
+    for (int i=stack->top; i >= 0; i--) {
+        printf("%d ", stack->tab[i]);
     }
 }
 

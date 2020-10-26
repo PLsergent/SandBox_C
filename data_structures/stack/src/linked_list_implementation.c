@@ -20,14 +20,27 @@ int push_stack(stack_t *stack, int val) {
 
 int pop_stack(stack_t *stack, int *val) {
     node_t* tmp = stack->top;
+
+    if (stack->top == NULL) {
+        return -1;
+    }
     *val = stack->top->val;
-    stack->top = stack->top->next;
-    free(tmp);
-    
-    return stack->top->val;
+
+    if (stack->top->next != NULL) {
+        stack->top = stack->top->next;
+        free(tmp);
+        return stack->top->val;
+    } else {
+        stack->top = NULL;
+        return -1;
+    }
 }
 
-int top_stack(stack_t *stack, int *val) {
+int top_stack(stack_t *stack) {
+    if (stack->top == NULL) {
+        return -1;
+    }
+    printf("Top value : %d\n", stack->top->val);
     return stack->top->val;
 }
 

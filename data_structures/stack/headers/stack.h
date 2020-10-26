@@ -4,7 +4,7 @@
 #ifndef __STACK__H__
 #define __STACK__H__
 
-#define __STATIC__STACK__ 1 
+#define __DYN__STACK__ 1 
 
 #ifdef __STATIC__STACK__
 
@@ -43,7 +43,7 @@ void set_file(stack_t *stack, char *file_name); // special function to determine
 void init_stack(stack_t *stack); // initalize the data structure
 int push_stack(stack_t *stack, int val); // push value into stack
 int pop_stack(stack_t *stack, int *val); // pops top value from stack
-int top_stack(stack_t *stack, int *val); // returns top value of stack
+int top_stack(stack_t *stack); // returns top value of stack
 void display_stack(stack_t *stack); // displays the contents of the stack
 
 #endif 

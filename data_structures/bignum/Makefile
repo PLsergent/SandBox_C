@@ -1,2 +1,2 @@
-bignum.sh: ./main.c ./headers/bignum.h
+bignum: ./main.c ./headers/bignum.h
 	gcc ./main.c ./src/bignum.c ./src/light_linkedlist.c -o ./compiled/bignum.sh

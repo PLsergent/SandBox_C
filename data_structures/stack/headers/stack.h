@@ -1,10 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #ifndef __STACK__H__
 #define __STACK__H__
 
-#define __DYN__STACK__ 1 
+#define __FILE__STACK__ 1 
 
 #ifdef __STATIC__STACK__
 

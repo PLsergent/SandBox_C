@@ -3,9 +3,9 @@
 int main() {
     stack_t p;
 
-    #ifdef __FILE__STACK__
+    /* #ifdef __FILE__STACK__
         set_file(&p, "persistentStack");
-    #endif
+    #endif */
 
     init_stack(&p);
     push_stack(&p, 5);
@@ -16,7 +16,7 @@ int main() {
 
     int val;
     pop_stack(&p, &val);
-    printf("\npopped value = %d\n", val);
+    printf("popped value = %d\n", val);
     display_stack(&p);
     
     pop_stack(&p, &val);

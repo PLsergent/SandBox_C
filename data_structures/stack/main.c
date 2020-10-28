@@ -12,6 +12,7 @@ int main() {
     push_stack(&p, 6);
     push_stack(&p, 7);
     display_stack(&p);
+    printf("(Press any key)\n");
     scanf("%*c");
 
     int val;

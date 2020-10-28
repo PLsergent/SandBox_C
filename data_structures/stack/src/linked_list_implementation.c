@@ -5,6 +5,11 @@
 
 void init_stack(stack_t* stack) {
     stack->top = NULL;
+    printf("Stack linked list implementation initialized.\n");
+}
+
+int isEmpty(stack_t *stack) {
+    return stack->top == NULL;
 }
 
 int push_stack(stack_t *stack, int val) {
@@ -15,13 +20,14 @@ int push_stack(stack_t *stack, int val) {
     new_node->next = stack->top;
     stack->top = new_node;
 
+    printf("%d pushed to stack\n", val);
     return new_node->val;
 }
 
 int pop_stack(stack_t *stack, int *val) {
     node_t* tmp = stack->top;
 
-    if (stack->top == NULL) {
+    if (isEmpty(stack)) {
         return -1;
     }
     *val = stack->top->val;
@@ -37,7 +43,7 @@ int pop_stack(stack_t *stack, int *val) {
 }
 
 int top_stack(stack_t *stack) {
-    if (stack->top == NULL) {
+    if (isEmpty(stack)) {
         return -1;
     }
     printf("Top value : %d\n", stack->top->val);
@@ -46,8 +52,10 @@ int top_stack(stack_t *stack) {
 
 void display_stack(stack_t *stack) {
     node_t* current;
-    current = stack->top;
-    if (current != NULL) {
+
+    if (!isEmpty(stack)) {
+        current = stack->top;
+        printf("(Top on the left)\n");
         printf("Stack: ");
         do {
             printf("%d ", current->val);

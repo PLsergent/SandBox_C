@@ -5,7 +5,7 @@
 #ifndef __STACK__H__
 #define __STACK__H__
 
-#define __FILE__STACK__ 1 
+#define __DYN__STACK__ 1 
 
 #ifdef __STATIC__STACK__
 

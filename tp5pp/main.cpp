@@ -45,22 +45,22 @@ int main () {
     c2.print();
     cout << endl;
 
-    cout << "Sum > " << endl;
+    cout << "Sum + " << endl;
     c3 = c1 + c2;
     c3.print();
     cout << endl;
 
-    cout << "Difference > " << endl;
+    cout << "Difference - " << endl;
     c3 = c1 - c2;
     c3.print();
     cout << endl;
 
-    cout << "Product > " << endl;
+    cout << "Product * " << endl;
     c3 = c1 * c2;
     c3.print();
     cout << endl;
 
-    cout << "Division > " << endl;
+    cout << "Division / " << endl;
     c3 = c1 / c2;
     c3.print();
     cout << endl;

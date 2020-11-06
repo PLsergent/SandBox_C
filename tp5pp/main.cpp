@@ -1,8 +1,9 @@
 #include "./headers/public_or_private.hpp"
+#include "./headers/complex.hpp"
 
 
 int main () {
-    // ======= THEME 1 PUBLIC OR PRIVATE ? =======
+    cout << "======= THEME 1 PUBLIC OR PRIVATE ? =======" << endl;
 
     Base base;
     Derived derived;
@@ -30,5 +31,39 @@ int main () {
     cout << "Unrelated public_int : " << unrelated._public() << endl;
 
     // By default attributes are private
+    cout << "===========================================" << endl;
+
+    cout << "================= COMPLEX =================" << endl;
+
+    Complex c1(3, 2);
+    Complex c2(4, -3);
+    Complex c3;
+    
+    cout << "Complex 1 : ";
+    c1.print();
+    cout << "Complex 2 : ";
+    c2.print();
+    cout << endl;
+
+    cout << "Sum > " << endl;
+    c3 = c1 + c2;
+    c3.print();
+    cout << endl;
+
+    cout << "Difference > " << endl;
+    c3 = c1 - c2;
+    c3.print();
+    cout << endl;
+
+    cout << "Product > " << endl;
+    c3 = c1 * c2;
+    c3.print();
+    cout << endl;
+
+    cout << "Division > " << endl;
+    c3 = c1 / c2;
+    c3.print();
+    cout << endl;
+
     // ===========================================
 }

@@ -1,6 +1,7 @@
 #include "./headers/public_or_private.hpp"
 #include "./headers/complex.hpp"
 #include "./headers/X.hpp"
+#include "./headers/Y.hpp"
 
 
 int main () {
@@ -81,6 +82,19 @@ int main () {
     a.set_value_at(1, 3);
     a.print(); // a array updated
     b.print(); // b array unchanged
+    cout << "===========================================" << endl;
+
+    cout << "================= CLASS Y =================" << endl;
+
+    Y e;
+    e.print();
+
+    Y f(e); // Copy constructor called
+    f.print();
+
+    e.set_value_at(1, 3);
+    e.print(); // e array updated
+    f.print(); // f array unchanged
     cout << "===========================================" << endl;
 
     return 0;

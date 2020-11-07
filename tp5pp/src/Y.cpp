@@ -1,29 +1,28 @@
-#include "../headers/X.hpp"
+#include "../headers/Y.hpp"
 
 
-X::X() {
-    size = sizeof(array)/sizeof(array[0]);
+Y::Y() {
     srand(time(0));
     for(int i=0; i < size; i++)
-        array[i] = (rand() % 10) + 1;
+        dyn_array[i] = (rand() % 10) + 1;
 }
 
-X::X(const X& x) {
-    size = sizeof(array)/sizeof(array[0]);
+Y::Y(const Y& y) {
     for(int i = 0; i < size; ++i)
-        array[i] = x.array[i];
+        dyn_array[i] = y.dyn_array[i];
 }
 
-void X::print() {
-    for(int e : array)
+void Y::print() {
+    vector<int> vec(dyn_array, dyn_array + size);
+    for (int e : vec)
         cout << e << ' ';
     cout << '\n';
 }
 
-void X::set_value_at(int index, int value) {
+void Y::set_value_at(int index, int value) {
     if (index >= 0 && index < this->size) {
         cout << "Add value : " << value << " at index : " << index << endl;
-        array[index] = value;
+        dyn_array[index] = value;
     } else {
         cout << "Index out of bounds" << endl;
     }

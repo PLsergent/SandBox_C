@@ -1,5 +1,6 @@
 #include "./headers/public_or_private.hpp"
 #include "./headers/complex.hpp"
+#include "./headers/X.hpp"
 
 
 int main () {
@@ -38,6 +39,8 @@ int main () {
     Complex c1(3, 2);
     Complex c2(4, -3);
     Complex c3;
+
+    Complex c4(c1);
     
     cout << "Complex 1 : ";
     c1.print();
@@ -65,5 +68,20 @@ int main () {
     c3.print();
     cout << endl;
 
-    // ===========================================
+    cout << "===========================================" << endl;
+
+    cout << "================= CLASS X =================" << endl;
+
+    X a;
+    a.print();
+
+    X b(a); // Copy constructor called
+    b.print();
+
+    a.set_value_at(1, 3);
+    a.print(); // a array updated
+    b.print(); // b array unchanged
+    cout << "===========================================" << endl;
+
+    return 0;
 }

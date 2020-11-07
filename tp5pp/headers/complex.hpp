@@ -8,11 +8,10 @@ class Complex {
     double real;
     double imag;
 
-    public :
-        Complex(double real_ = 0, double imag_ = 0) {
-            real = real_;
-            imag = imag_;
-        }
+    public:
+        Complex();
+        Complex(const Complex&);
+        Complex(double, double);
 
         double _real() { return real; }
         double _imag() { return imag; }
@@ -23,7 +22,6 @@ class Complex {
         friend Complex operator - (Complex&, Complex&);
         friend Complex operator * (Complex&, Complex&);
         friend Complex operator / (Complex&, Complex&);
-//----------------------------------------------
 };
 
 #endif

@@ -5,11 +5,17 @@ Y::Y() {
     srand(time(0));
     for(int i=0; i < size; i++)
         dyn_array[i] = (rand() % 10) + 1;
+    cout << "(Y) Create dyn array..." << endl;
 }
 
 Y::Y(const Y& y) {
     for(int i = 0; i < size; ++i)
         dyn_array[i] = y.dyn_array[i];
+}
+
+Y::~Y() {
+    delete [] dyn_array;
+    cout << "(Y) Delete dyn array..." << endl;
 }
 
 void Y::print() {

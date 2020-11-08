@@ -5,8 +5,10 @@ using namespace std;
 
 
 class Complex {
-    double real;
-    double imag;
+
+    private:
+        double real;
+        double imag;
 
     public:
         Complex();
@@ -22,6 +24,9 @@ class Complex {
         friend Complex operator - (Complex&, Complex&);
         friend Complex operator * (Complex&, Complex&);
         friend Complex operator / (Complex&, Complex&);
+        friend ostream& operator << (ostream&, Complex&);
+        friend istream& operator >> (istream&, Complex&);
+        // Complex& operator = (Complex&);
 };
 
 #endif

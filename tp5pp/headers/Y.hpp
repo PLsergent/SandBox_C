@@ -8,10 +8,11 @@ using namespace std;
 
 class Y {
     int size = 5;
-    int * dyn_array = new int [size];
+    int * dyn_array = new int[size];
 
     public:
         Y();
+        ~Y();
         Y(const Y&);
 
         void print();

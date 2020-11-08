@@ -39,17 +39,16 @@ int main () {
 
     cout << "================= COMPLEX =================" << endl;
 
-    Complex c1(3, 2);
-    Complex c2(4, -3);
-    Complex c3;
-
-    Complex c4(c1);
     
-    cout << "Complex 1 : ";
-    c1.print();
-    cout << "Complex 2 : ";
-    c2.print();
-    cout << endl;
+    Complex c1(3, 2);
+    Complex c2;
+    cin >> c2;
+    Complex c3;
+    Complex c4(c1);
+
+    cout << endl; 
+    cout << "Complex 1 : " << c1;
+    cout << "Complex 2 : " << c2 << endl;
 
     cout << "Sum + " << endl;
     c3 = c1 + c2;
@@ -124,5 +123,18 @@ int main () {
     // Same for the destuctors
 
     cout << "===========================================" << endl;
+
+    cout << "================ DELETE VOID* =================" << endl;
+
+    Y* pt_a = new Y();
+    void* pt_b = new Y();
+
+    delete pt_a;
+    // delete pt_b; deleting ‘void*’ is undefined
+    // We can't delete void* because we didn't define a destructor for this type
+    // So here pt_b is deleted when it gets out of scope 
+
+    cout << "===========================================" << endl;
+
     return 0;
 }

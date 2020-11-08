@@ -22,43 +22,67 @@ Complex::Complex(double real_ = 0, double imag_ = 0 ) {
 	cout << "done" << endl; 
 }
 
-Complex operator + (Complex& Complex1, Complex& Complex2) {
-	double real = Complex1._real() + Complex2._real();
-	double imag = Complex1._imag() + Complex2._imag();
+Complex operator + (Complex& complex1, Complex& complex2) {
+	double real = complex1.real + complex2.real;
+	double imag = complex1.imag + complex2.imag;
 
 	Complex tmp(real, imag);
 	return tmp;
 }
 
-Complex operator - (Complex& Complex1, Complex& Complex2){
-	double real = Complex1._real() - Complex2._real();
-	double imag = Complex1._imag() - Complex2._imag();
+Complex operator - (Complex& complex1, Complex& complex2){
+	double real = complex1.real - complex2.real;
+	double imag = complex1.imag - complex2.imag;
 
 	Complex tmp(real, imag);
 	return tmp;
 }
 
-Complex operator * (Complex& Complex1, Complex& Complex2){
-	double real = (Complex1._real() * Complex2._real()) - (Complex1._imag() * Complex2._imag());
-	double imag = (Complex1._real() * Complex2._imag()) + (Complex1._imag() * Complex2._real());
+Complex operator * (Complex& complex1, Complex& complex2){
+	double real = (complex1.real * complex2.real) - (complex1.imag * complex2.imag);
+	double imag = (complex1.real * complex2.imag) + (complex1.imag * complex2.real);
 
 	Complex tmp(real, imag);
 	return tmp;
 }
 
-Complex operator / (Complex& Complex1, Complex& Complex2){
-	Complex conjugate2(Complex2._real(), -Complex2._imag());
-	Complex num = Complex1 * conjugate2;
-	Complex denom = Complex2 * conjugate2;
+Complex operator / (Complex& complex1, Complex& complex2){
+	Complex conjugate2(complex2.real, -complex2.imag);
+	Complex num = complex1 * conjugate2;
+	Complex denom = complex2 * conjugate2;
 
-	Complex tmp(num._real()/denom._real(), num._imag()/denom._real());
+	Complex tmp(num.real/denom.real, num.imag/denom.real);
 	return tmp;
 }
+
+ostream& operator << (ostream& out, Complex& complex) {
+	out << complex.real;
+	complex.imag < 0.0 ?
+		out << " - " << -complex.imag << "i" << endl :
+			out << " + " << complex.imag << "i" << endl;
+	return out;
+}
+
+istream& operator >> (istream &in,  Complex& complex) {
+    cout << "Enter Real Part : "; 
+    in >> complex.real; 
+    cout << "Enter Imaginary Part : "; 
+    in >> complex.imag; 
+    return in; 
+}
+
+/* Complex& Complex::operator = (Complex& complex) {
+	real = complex.real;
+	imag = complex.imag;
+
+	return *this;
+} */
 
 void Complex::print() {
+	cout << this->_real();
 	if (this->_imag() < 0.0) {
-		cout << this->_real() << "-" << -this->_imag() << "i" << endl;
+		cout << "-" << -this->_imag() << "i" << endl;
 	} else {
-		cout << this->_real() << "+" << this->_imag() << "i" << endl;
+		cout << "+" << this->_imag() << "i" << endl;
 	}
 }

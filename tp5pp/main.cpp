@@ -2,6 +2,7 @@
 #include "./headers/complex.hpp"
 #include "./headers/X.hpp"
 #include "./headers/Y.hpp"
+#include "./headers/D.hpp"
 
 
 int main () {
@@ -95,6 +96,23 @@ int main () {
     e.set_value_at(1, 3);
     e.print(); // e array updated
     f.print(); // f array unchanged
+    cout << "===========================================" << endl;
+
+    cout << "================= CLASS D =================" << endl;
+    char string1[] = "str1";
+    char string2[] = "str2";
+    D str1(string1);
+    D str2(string2);
+
+    D *pt_str1 = &str1;
+    D *pt_str2 = &str2;
+
+    str1.D::~D();
+    str2.D::~D();
+
+    // Even if the destructors are called explicitly they will be called automaticaly when out of scope
+    // So there is the same amount of destructor and constructor called when the destructor are not called explicitly
+
     cout << "===========================================" << endl;
 
     return 0;

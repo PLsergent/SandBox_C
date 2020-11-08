@@ -3,11 +3,13 @@
 #include <iostream>
 using namespace std;
 
+
 class U2 {
     int number;
 
     public:
         U2(int nbr = 0) { number = nbr; };
+        ~U2();
 };
 
 class TUTU {
@@ -15,6 +17,7 @@ class TUTU {
 
     public:
         TUTU();
+        ~TUTU();
         TUTU(int);
         TUTU(U2*);
 };

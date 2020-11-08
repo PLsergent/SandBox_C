@@ -15,3 +15,9 @@ TUTU::TUTU(U2* u_) {
     u = u_;
     cout << "Create TU... constructor 3" << endl;
 }
+
+U2::~U2() {}
+
+TUTU::~TUTU() {
+    delete u;
+}

@@ -15,3 +15,6 @@ B::B(A new_a) {
     a = new_a;
     cout << "Create AB... constructor 3" << endl;
 }
+
+A::~A() {}
+B::~B() {}

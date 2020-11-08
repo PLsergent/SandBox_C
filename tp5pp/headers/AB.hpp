@@ -8,6 +8,7 @@ class A {
 
     public:
         A(int nbr = 0) { number = nbr; };
+        ~A();
 };
 
 
@@ -16,6 +17,7 @@ class B {
 
     public:
         B();
+        ~B();
         B(int);
         B(A);
 };

@@ -64,10 +64,11 @@ ostream& operator << (ostream& out, Complex& complex) {
 }
 
 istream& operator >> (istream &in,  Complex& complex) {
-    cout << "Enter Real Part : "; 
+    cout << "\nEnter Real Part : "; 
     in >> complex.real; 
     cout << "Enter Imaginary Part : "; 
-    in >> complex.imag; 
+    in >> complex.imag;
+	cout << endl; 
     return in; 
 }
 

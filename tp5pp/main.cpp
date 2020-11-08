@@ -4,6 +4,9 @@
 #include "./headers/Y.hpp"
 #include "./headers/D.hpp"
 #include "./headers/2D_array.hpp"
+#include "./headers/AB.hpp"
+#include "./headers/Sess.hpp"
+#include "./headers/TU.hpp"
 
 
 int main () {
@@ -35,6 +38,7 @@ int main () {
     cout << "Unrelated public_int : " << unrelated._public() << endl;
 
     // By default attributes are private
+
     cout << "===========================================" << endl;
 
     cout << "================= COMPLEX =================" << endl;
@@ -83,6 +87,7 @@ int main () {
     a.set_value_at(1, 3);
     a.print(); // a array updated
     b.print(); // b array unchanged
+
     cout << "===========================================" << endl;
 
     cout << "================= CLASS Y =================" << endl;
@@ -96,20 +101,25 @@ int main () {
     e.set_value_at(1, 3);
     e.print(); // e array updated
     f.print(); // f array unchanged
+
     cout << "===========================================" << endl;
 
     cout << "================= CLASS D =================" << endl;
 
     char string1[] = "str1";
     char string2[] = "str2";
+
     D str1(string1);
     D str2(string2);
 
-    D *pt_str1 = &str1;
-    D *pt_str2 = &str2;
+    D *pt_str1 = new D(string1);
+    D *pt_str2 = new D(string2);
 
-    str1.D::~D();
-    str2.D::~D();
+    str1.~D();
+    str2.~D();
+
+    delete pt_str1;
+    delete pt_str2;
 
     // Even if the destructors are called explicitly they will be called automaticaly when out of scope
     // So there is the same amount of destructor and constructor called when the destructor are not called explicitly
@@ -124,7 +134,7 @@ int main () {
 
     cout << "===========================================" << endl;
 
-    cout << "================ DELETE VOID* =================" << endl;
+    cout << "============== DELETE VOID* ===============" << endl;
 
     Y* pt_a = new Y();
     void* pt_b = new Y();
@@ -135,6 +145,33 @@ int main () {
     // So here pt_b is deleted when it gets out of scope 
 
     cout << "===========================================" << endl;
+
+    cout << "================ CLASS AB =================" << endl;
+
+    A AB_a;
+    B AB_b1;
+    B AB_b2(2);
+    B AB_b3(AB_a);
+
+    cout << "===========================================" << endl;
+
+    cout << "=============== CLASS SESS ================" << endl;
+
+    Sess les;
+    Sess chaussettes;
+
+    cout << "===========================================" << endl;
+
+    cout << "================ CLASS TU =================" << endl;
+
+    U2* u = new U2();
+    TUTU TU_t1;
+    TUTU TU_t2(2);
+    TUTU TU_t3(u);
+
+    cout << "===========================================" << endl;
+
+    cout << "===============END OF MAIN=================" << endl;
 
     return 0;
 }

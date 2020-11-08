@@ -6,9 +6,8 @@ using namespace std;
 
 class Complex {
 
-    private:
-        double real;
-        double imag;
+    double real;
+    double imag;
 
     public:
         Complex();

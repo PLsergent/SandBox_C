@@ -11,6 +11,7 @@ Y::Y() {
 Y::Y(const Y& y) {
     for(int i = 0; i < size; ++i)
         dyn_array[i] = y.dyn_array[i];
+    cout << "(Y) Create dyn array by copy..." << endl;
 }
 
 Y::~Y() {

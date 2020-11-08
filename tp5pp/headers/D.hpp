@@ -6,13 +6,12 @@
 using namespace std;
 
 class D {
-    private:
     char* s;
     int size;
  
     public:
-        D(char*); // constructor
-        ~D(); // destructor
+        D(char*);
+        ~D();
 };
 
 #endif

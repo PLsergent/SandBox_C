@@ -3,6 +3,7 @@
 #include "./headers/X.hpp"
 #include "./headers/Y.hpp"
 #include "./headers/D.hpp"
+#include "./headers/2D_array.hpp"
 
 
 int main () {
@@ -99,6 +100,7 @@ int main () {
     cout << "===========================================" << endl;
 
     cout << "================= CLASS D =================" << endl;
+
     char string1[] = "str1";
     char string2[] = "str2";
     D str1(string1);
@@ -114,6 +116,13 @@ int main () {
     // So there is the same amount of destructor and constructor called when the destructor are not called explicitly
 
     cout << "===========================================" << endl;
+    
+    cout << "================ 2D ARRAY =================" << endl;
 
+    T dyn_arr(2, 2);
+    // The constuctors of O are called before the constructor of T
+    // Same for the destuctors
+
+    cout << "===========================================" << endl;
     return 0;
 }

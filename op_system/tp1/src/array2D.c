@@ -9,12 +9,12 @@ int** init_array(int nb_col, int nb_line) {
     return array2d;
 }
 
-void init_array_void(int nb_col, int nb_line) {
-    int** array2d;
-    array2d = (int**)malloc(sizeof(int*)*nb_line);
+void init_array_void(int** * array2d, int nb_col, int nb_line) {
+    *array2d = (int**)malloc(sizeof(int*)*nb_line);
     for(int i=0; i < nb_line; i++) {
-        array2d[i] = (int*)malloc(sizeof(int)*nb_col);
+        (*array2d)[i] = (int*)malloc(sizeof(int)*nb_col);
     }
+    return;
 }
 
 void fill_array(int** array2d, int nb_col, int nb_line) {
@@ -23,6 +23,7 @@ void fill_array(int** array2d, int nb_col, int nb_line) {
 	        array2d[i][j] = i*j;
         }
     }
+    return;
 }
 
 void print_array(int** array2d, int nb_col, int nb_line) {
@@ -35,10 +36,14 @@ void print_array(int** array2d, int nb_col, int nb_line) {
         printf("],\n");
     }
     printf("]\n");
+    return;
 }
 
-void destroy_array(int** array2d, int nb_col, int nb_line) {
+void destroy_array(int** * array2d, int nb_col, int nb_line) {
     for(int i=0; i < nb_col; i++) {
-        free(array2d[i]);
+        free((*array2d)[i]);
     }
+    free(*array2d);
+    *array2d = NULL;
+    return;
 }

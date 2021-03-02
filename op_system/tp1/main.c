@@ -8,5 +8,11 @@ int main() {
     int** array = init_array(size_col, size_line);
     fill_array(array, 5, 5);
     print_array(array, size_col, size_line);
-    destroy_array(array, size_col, size_line);
+    destroy_array(&array, size_col, size_line);
+
+    int** array_void;
+    init_array_void(&array_void, size_col, size_line);
+    fill_array(array_void, 5, 5);
+    print_array(array_void, size_col, size_line);
+    destroy_array(&array_void, size_col, size_line);
 }

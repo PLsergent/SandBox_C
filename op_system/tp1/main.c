@@ -1,4 +1,3 @@
-#include <iostream>
 #include "./headers/array2D.h"
 
 int main() {
@@ -15,4 +14,6 @@ int main() {
     fill_array(array_void, 5, 5);
     print_array(array_void, size_col, size_line);
     destroy_array(&array_void, size_col, size_line);
+
+    return 0;
 }

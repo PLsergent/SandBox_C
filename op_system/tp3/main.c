@@ -98,5 +98,44 @@ int main() {
         pthread_join(b_thread, NULL);
     }
 
+    // Question 4
+    {
+        printf("\nQuestion 4:\n");
+
+        pthread_t t_reader, t_writer;
+        pthread_mutex_t lock_r, lock_w;
+        reader_thread_args_t reader_args;
+        writer_thread_args_t writer_args;
+
+        int *buffer = (int*)malloc(10*sizeof(int));
+        for (int i=0; i < 10; i++) {
+            buffer[i] = i;
+        }
+
+        reader_args.lock_r = &lock_r;
+        reader_args.lock_w = &lock_w;
+        reader_args.buffer = &buffer;
+        reader_args.index = 4;
+
+        writer_args.lock_r = &lock_r;
+        writer_args.lock_w = &lock_w;
+        writer_args.buffer = &buffer;
+        writer_args.index = 4;
+        writer_args.data = 100;
+
+        pthread_mutex_init(&lock_r, NULL);
+        pthread_mutex_init(&lock_w, NULL);
+        pthread_mutex_lock(&lock_w);
+
+        pthread_create(&t_reader, NULL, reader_thread, (void*) &reader_args);
+        pthread_create(&t_writer, NULL, writer_thread, (void*) &writer_args);
+        
+        pthread_join(t_reader, NULL);
+        pthread_join(t_writer, NULL);
+
+        pthread_mutex_destroy(&lock_r);
+        pthread_mutex_destroy(&lock_w);
+    }
+
     return 0;
 }

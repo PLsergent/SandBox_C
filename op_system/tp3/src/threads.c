@@ -43,9 +43,10 @@ void *synchro_thread(void *args) {
                 pthread_mutex_unlock(lock1);
             } else if (j == 3) {
                 pthread_mutex_lock(lock2);
-                printf("%s \n", sentence[j]);
+                printf("%s ", sentence[j]);
             }
         }
+        printf("\n");
         pthread_exit(NULL);
     }
 }
@@ -78,7 +79,7 @@ void *barrier_thread(void *args) {
     srand(time(NULL));
     int random = rand() % 3;
     sleep(random);
-    
+
     printf("[ b_thread ] Point atteint, en attente...\n");
 
     pthread_barrier_wait(barrier);
@@ -86,4 +87,52 @@ void *barrier_thread(void *args) {
     printf("[ b_thread ] Je peux continuer !\n");
     pthread_exit(NULL);
     return 0;
+}
+
+
+// Question 4
+
+void read_buffer(int index, int **buffer) {
+    printf("buffer[%d] = %d\n", index, (*buffer)[index]);
+}
+
+void write_buffer(int index, int value, int **buffer) {
+    (*buffer)[index] = value;
+    printf("modified value at index %d : buffer[%d] = %d\n", index, index, (*buffer)[index]);
+}
+
+void *reader_thread(void *args) {
+    reader_thread_args_t *arguments = args;
+    int **buffer = arguments->buffer;
+    pthread_mutex_t *lock_r = arguments->lock_r;
+    pthread_mutex_t *lock_w = arguments->lock_w;
+    int i = arguments->index;
+
+    printf("Reading...\n");
+
+    pthread_mutex_lock(lock_r);
+    read_buffer(i, buffer);
+    pthread_mutex_unlock(lock_w);
+
+    // See result after write
+    pthread_mutex_lock(lock_r);
+    read_buffer(i, buffer);
+    pthread_mutex_unlock(lock_w);
+    pthread_exit(NULL);
+}
+
+void *writer_thread(void *args) {
+    writer_thread_args_t *arguments = args;
+    int **buffer = arguments->buffer;
+    pthread_mutex_t *lock_r = arguments->lock_r;
+    pthread_mutex_t *lock_w = arguments->lock_w;
+    int i = arguments->index;
+    int value = arguments->data;
+
+    printf("Writing...\n");
+
+    pthread_mutex_lock(lock_w);
+    write_buffer(i, value, buffer);
+    pthread_mutex_unlock(lock_r);
+    pthread_exit(NULL);
 }

@@ -7,7 +7,7 @@
 
     // Question 1
 
-    void *fct_threads(void *args);
+    void *fct_thread(void *args);
 
     typedef struct fct_threads_args {
         int *global;
@@ -17,13 +17,30 @@
 
     // Question 2
 
-    void *synchro_threads(void *args);
+    void *synchro_thread(void *args);
 
-    typedef struct synchro_threads_args {
+    typedef struct synchro_thread_args {
         char **sentence;
         pthread_mutex_t *lock1;
         pthread_mutex_t *lock2;
         int i;
-    } synchro_threads_args_t;
+    } synchro_thread_args_t;
+
+
+    // Question 3
+
+    void *spleeping_thread(void *args);
+
+    typedef struct spleeping_thread_args {
+        pthread_barrier_t *barrier;
+        int i;
+    } spleeping_thread_args_t;
+
+    void *barrier_thread(void *args);
+
+    typedef struct barrier_thread_args {
+        pthread_barrier_t *barrier;
+        int n;
+    } barrier_thread_args_t;
 
 #endif

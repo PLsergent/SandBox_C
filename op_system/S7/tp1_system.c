@@ -208,8 +208,6 @@ void main_version_barrier_thread()
 	pthread_t mes_threads[NB_THREADS];
 	pthread_t barrier_thread_t;
 
-	sem_init(&sem_barrier, 0, 0);
-
 	pthread_create(&barrier_thread_t, NULL, barrier_thread, NULL);
 
 	for (int i=0; i < NB_THREADS; i++) {
